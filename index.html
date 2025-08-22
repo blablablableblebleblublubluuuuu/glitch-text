@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cool site</title>
+</head>
+<body>
+    <h1 id="text"></h1>
+    <script>
+        var str = "This is EVIL text.... EVIL EVIL text........... MAWAHAA... LOOK AT HOW GLITCHY THIS TEXT IS!!!!! ITS EVIL!!!"
+        var newstr = ""
+        var evils = ["!", "@", "#", "$", "%", "&", "*"]
+        setInterval(function()
+        {
+            for (let i = 0; i < str.length; i++) 
+            {
+                if (Math.floor(Math.random() * 501) == 1)
+                {
+                    newstr = newstr + evils[Math.floor(Math.random()*evils.length)]
+                }
+                else
+                {
+                    newstr = newstr + str.charAt(i)
+                }
+            }
+            document.getElementById("text").innerText = newstr
+            document.title = newstr
+            newstr = ""
+        }, 1)
+    </script>
+</body>
+</html>
